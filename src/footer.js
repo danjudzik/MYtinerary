@@ -1,13 +1,17 @@
-import logo from './homeIcon.png';
+
 import React, { Component } from 'react';
 
 
-class GreetingEverybody3 extends Component  {
- 
+class GreetingEverybody4 extends Component  {
+  
   render (){ return (
         <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <p>Want to create your own MYtinerary?</p>
+      <ul>
+          <li className="tabla">log in </li>
+          <li className="tabla"> create account</li>
+        </ul>
       </header>
        
      
@@ -16,4 +20,4 @@ class GreetingEverybody3 extends Component  {
   }
 }
 
-export default GreetingEverybody3;
+export default GreetingEverybody4;
