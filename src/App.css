@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  
+}
+
+
+.App-link {
+  color: #09d3ac;
+}
+
+.tabla{
+  list-style-type:none;
+  display: inline-flex;
+  padding: 0% 2%;
+  
+}
+
+
