@@ -7,7 +7,7 @@ class GreetingEverybody4 extends Component  {
   render (){ return (
         <div className="App">
       <header className="App-header">
-      <p>Want to create your own MYtinerary?</p>
+      <p className="texto2">Want to create your own MYtinerary?</p>
       <ul>
           <li className="tabla">log in </li>
           <li className="tabla"> create account</li>

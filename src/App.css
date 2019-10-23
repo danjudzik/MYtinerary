@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 5%;
+  
 }
 
 .App-logo {
@@ -9,14 +11,25 @@
 
 
 .App-link {
-  color: #09d3ac;
+  height: 35vmin;
+  margin-top: 8%;
 }
 
 .tabla{
-  list-style-type:none;
+  text-align: center;
   display: inline-flex;
   padding: 0% 2%;
+  font-size: 100%;
+  margin-right: 8%;
   
 }
 
+.texto{
+  text-align: center;
+  font-size: 7vmin;
+}
 
+.texto2{
+  text-align: center;
+  font-size: 4.5vmin;
+}
