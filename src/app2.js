@@ -4,6 +4,12 @@ import GreetingEverybody from './header.js'
 import GreetingEverybody2 from './browsing.js'
 import GreetingEverybody3 from './nav.js'
 import GreetingEverybody4 from './footer.js'
+import {
+   BrowserRouter as Router,
+   Switch,
+   Route,
+   Link
+ } from "react-router-dom";
 
 class App extends Component  {
   
@@ -24,7 +30,7 @@ class App extends Component  {
        </footer>
 
       <nav>
-         <GreetingEverybody3 >  </GreetingEverybody3>
+         <GreetingEverybody3>  </GreetingEverybody3>
       </nav>
 
     </div>
