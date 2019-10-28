@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import logo from './homeIcon.png';
 
 
-class GreetingEverybody7 extends Component  {
+
+class LogIn extends Component  {
   
   render (){ return (
         <div className="App">
       <header className="App-header">
-      <p className="texto2">log in</p>
-      <header className="App-header">
-      <Link to ="/"> <img src={logo} className="App-logo" alt="logo" /></Link>
+      <p className="texto2">Create account</p>
+      
+        
       </header>
-      </header>
+      
        
      
     </div>
@@ -19,4 +20,4 @@ class GreetingEverybody7 extends Component  {
   }
 }
 
-export default GreetingEverybody7;
+export default LogIn;

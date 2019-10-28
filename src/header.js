@@ -2,9 +2,11 @@ import logo from './MYtineraryLogo.png';
 import React, { Component } from 'react';
 
 
-class GreetingEverybody extends Component  {
+class Header extends Component  {
  
   render (){ return (
+    
+    <header className="App-header">
         <div className="App">
       <header className="App-header">
         <img src={logo} className="App-link" alt="logo" />
@@ -12,8 +14,9 @@ class GreetingEverybody extends Component  {
        
      
     </div>
+    </header>
   )
   }
 }
 
-export default GreetingEverybody;
+export default Header;

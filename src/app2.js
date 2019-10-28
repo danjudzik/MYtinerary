@@ -1,40 +1,45 @@
-import React, { Component } from 'react';
-import './App.css';
-import GreetingEverybody from './header.js'
-import GreetingEverybody2 from './browsing.js'
-import GreetingEverybody3 from './nav.js'
-import GreetingEverybody4 from './footer.js'
-import {
-   BrowserRouter as Router,
-   Switch,
-   Route,
-   Link
- } from "react-router-dom";
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./header.js";
+import Browsing from "./browsing.js";
+import Nav from "./nav.js";
+import Footer from "./footer.js";
 
-class App extends Component  {
-  
-  render (){ return (
-     <div className="App">
-      <header className="App-header">
-         <GreetingEverybody >  </GreetingEverybody>
-      </header>
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SignIn from "./sing in";
+import LogIn from "./log in";
+import StartBrowsing from "./startBrowsing";
 
-      <section>
-         <div>
-          <GreetingEverybody2> </GreetingEverybody2>
-        </div>
-       </section>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+         <Header></Header>
+        <Router>
+          <Switch>
+            <Route exact path="/sign in"><SignIn /></Route>
+            <Route exact path="/Create_Account" ><LogIn/></Route>
+            <Route exact path="/browsing"><StartBrowsing/> </Route>
+            <Route path="/">
 
-      <footer>
-         <GreetingEverybody4>  </GreetingEverybody4>
-       </footer>
+              <section>
+                <div>
+                  <Browsing> </Browsing>
+                </div>
+              </section>
 
-      <nav>
-         <GreetingEverybody3>  </GreetingEverybody3>
-      </nav>
+            </Route>
+          </Switch>
+              <footer>
+                <Footer></Footer>
+              </footer>
 
-    </div>
-  )
+              <nav>
+                <Nav></Nav>
+              </nav>
+        </Router>
+      </div>
+    );
   }
 }
 

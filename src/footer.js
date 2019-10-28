@@ -1,48 +1,38 @@
 
 import React, { Component } from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import GreetingEverybody6 from './sing in';
-import GreetingEverybody7 from './log in';
 
 
-class GreetingEverybody4 extends Component  {
+
+class Footer extends Component  {
   
   render (){ return (
-        <div className="App">
+  <div className="App">
       <header className="App-header">
       <p className="texto2">Want to create your own MYtinerary?</p>
-     <Router>
-           <ul> 
-           <li className="tabla"> 
+  
+        <ul> 
+          <li className="tabla"> 
            <Link to ="/sign in"> sign in</Link>
-            </li>
-           <li className="tabla">
-             <Link to ="/create account"> create account</Link>
-              </li>
+          </li>
+          <li className="tabla">
+            <Link to ="/Create_Account"> create account</Link>
+          </li>
         </ul>
 
-        <Switch>
-          <Route path="/sign in">
-            <GreetingEverybody6 />
-          </Route>
-          <Route path="/create account">
-            <GreetingEverybody7 />
-          </Route>
-        </Switch>
-     </Router>
-
-        
+  
       </header>
        
-     
-    </div>
+    
+  </div>
   )
   }
 }
 
-export default GreetingEverybody4;
+export default Footer;

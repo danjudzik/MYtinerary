@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import logo from './homeIcon.png';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
-class GreetingEverybody6 extends Component  {
+class SignIn extends Component  {
   
   render (){ return (
         <div className="App">
       <header className="App-header">
-      <p className="texto2">sign in</p>
-      <header className="App-header">
-      <Link to ="/"> <img src={logo} className="App-logo" alt="logo" /></Link>
+      <p className="texto2">Sign In</p>
+        
+      
+      
       </header>
-      </header>
+     
        
      
     </div>
@@ -19,4 +26,4 @@ class GreetingEverybody6 extends Component  {
   }
 }
 
-export default GreetingEverybody6;
+export default SignIn;
