@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import logo from './homeIcon.png';
 import React, { Component } from 'react';
 import {
@@ -23,29 +22,3 @@ class Nav extends Component  {
 }
 
 export default Nav;
-=======
-import logo from './homeIcon.png';
-import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-class Nav extends Component  {
- 
-  render (){ return (
-        <div className="App">
-      <header className="App-header">
-      <Link to="/"> <img src={logo} className="App-logo" alt="logo" /></Link>
-      </header>
-       
-    
-    </div>
-  )
-  }
-}
-
-export default Nav;
->>>>>>> 698bdbc1c7bda6f5fb78421ee9877c43c717151b
