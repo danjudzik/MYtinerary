@@ -8,7 +8,7 @@ class LogIn extends Component  {
   render (){ return (
         <div className="App">
       <header className="App-header">
-      <p className="texto2">Create account</p>
+      <p className="texto2">log in</p>
       
         
       </header>

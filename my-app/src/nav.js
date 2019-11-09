@@ -1,4 +1,4 @@
-import logo from './homeIcon.png';
+import logo from './imagenes/homeIcon.png';
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,

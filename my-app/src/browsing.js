@@ -1,4 +1,4 @@
-import logo from './circled-right-2.png';
+import logo from './imagenes/circled-right-2.png';
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
