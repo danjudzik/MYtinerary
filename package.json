@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd my-app && npm start",
+    "client": "cd my-app && npm run start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
@@ -16,6 +16,7 @@
   "description": "",
   "dependencies": {
     "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7"

@@ -8,7 +8,7 @@ import Footer from "./footer.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SignIn from "./sing in";
 import LogIn from "./log in";
-import StartBrowsing from "./startBrowsing";
+import Postres from "./startBrowsing";
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/sign in"><SignIn /></Route>
             <Route exact path="/Create_Account" ><LogIn/></Route>
-            <Route exact path="/browsing"><StartBrowsing/> </Route>
+            <Route exact path="/browsing"><Postres/> </Route>
             <Route path="/">
 
               <section>

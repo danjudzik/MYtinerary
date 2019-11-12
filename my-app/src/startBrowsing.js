@@ -1,36 +1,53 @@
-import React, { Component } from 'react';
-
-import ny from './imagenes/descarga.jpg'
-import amsterdam from './imagenes/amsterdam.jpg'
-import paris from './imagenes/paris.jpeg'
-import london from './imagenes/london.jpg'
-import barcelona from './imagenes/barcelona.jpg'
-import roma from './imagenes/roma.jpg'
+import React from 'react';
+import './App.css';
+import {Button} from 'react-bootstrap';
 
 
 
-class StartBrowsing extends Component  {
-  
-  render (){ return (
-        <div className="App">
-      <header className="App-header">
-      <h2 className="texto2">Browsing</h2>
-      <img className="imagen" src={ny}/> 
-      <img className="imagen" src={amsterdam}/> 
-      <img className="imagen" src={paris}/> 
-      <img className="imagen" src={london}/> 
-      <img className="imagen" src={barcelona}/> 
-      <img className="imagen" src={roma}/> 
+
+class Postres extends React.Component {
+ constructor(props){
+   super(props);
+   this.state= {
+     products:[]
+   }
+ }
+ componentDidMount(){
+  fetch("http://localhost:5000/city").then((res)=>{
+    return res.json();
+  }).then((data)=>{
+    this.setState({products:data})
+  })
+ }
+
+  render(){
+    return (
+      <React.Fragment>
         
-      
-      
-      </header>
-     
+        <div>
        
-     
-    </div>
-  )
+        </div>
+        <hr/>
+        <div>
+         
+
+          <ul >
+            {this.state.products.map((product)=>{
+              return (
+                <li className="tabla2" key={product._id}>
+                 <Button variant="outline-secondary">{product.city}</Button> 
+                </li>
+              
+            
+              )
+            })}
+          </ul>
+        </div>
+        <hr/>
+        
+      </React.Fragment>
+    )
   }
 }
 
-export default StartBrowsing;
+export default Postres;

@@ -7,4 +7,4 @@ router.get("/city",citiesController.getCities)
 
 
 
-module.exports = router
+module.exports = router 

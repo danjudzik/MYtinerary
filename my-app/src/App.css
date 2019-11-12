@@ -38,3 +38,12 @@
   height: 35vmin;
   width: 70vmin;
 }
+
+.tabla2{
+  
+    list-style-type: none;
+    display: grid;
+   margin: 3% 0%;
+
+  
+}

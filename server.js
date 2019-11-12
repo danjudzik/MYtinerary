@@ -5,6 +5,8 @@ const app = express();
 const routerCities = require('./cityroutes')
 
 
+const cors = require("cors")
+app.use(cors())
 app.get("/", (req,res) => res.send("qwertyui"));
 app.get("/test", (req,res) => res.send("12314"));
 app.get("/cities", (req,res) => res.send("aasas"));
