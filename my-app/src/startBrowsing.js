@@ -4,26 +4,25 @@ import {Button} from 'react-bootstrap';
 
 
 
-
 class Postres extends React.Component {
  constructor(props){
    super(props);
    this.state= {
      products:[]
-   }
- }
- componentDidMount(){
-  fetch("http://localhost:5000/city").then((res)=>{
-    return res.json();
-  }).then((data)=>{
-    this.setState({products:data})
-  })
- }
-
+    }
+  }
+  componentDidMount(){
+    fetch("http://localhost:5000/city").then((res)=>{
+      return res.json();
+    }).then((data)=>{
+      this.setState({products:data})
+    })
+  }
   render(){
     return (
       <React.Fragment>
         
+
         <div>
        
         </div>
@@ -38,7 +37,7 @@ class Postres extends React.Component {
                  <Button variant="outline-secondary">{product.city}</Button> 
                 </li>
               
-            
+              
               )
             })}
           </ul>

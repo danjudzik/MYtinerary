@@ -10,6 +10,12 @@ import SignIn from "./sing in";
 import LogIn from "./log in";
 import Postres from "./startBrowsing";
 
+
+
+
+
+
+
 class App extends Component {
   render() {
     return (
@@ -19,7 +25,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/sign in"><SignIn /></Route>
             <Route exact path="/Create_Account" ><LogIn/></Route>
-            <Route exact path="/browsing"><Postres/> </Route>
+            <Route exact path="/browsing"> <Postres/></Route>
             <Route path="/">
 
               <section>
