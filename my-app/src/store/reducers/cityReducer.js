@@ -1,0 +1,23 @@
+const productsReducer = (state = [], action) => {
+    
+      switch (action.type) {
+        case 'ADD_PROD':
+            return [
+              ...state,
+              {
+                City: action.payload.City,
+                Country: action.payload.Country
+              }
+            ]
+        case 'DELETE_PROD':
+              let state2=state.slice();
+              return state2.filter((prod)=>{return prod._id!==action.payload});
+            
+        case'GET_PROD':
+            return action.payload
+        default:
+          return state
+      }
+    }
+    
+    export default productsReducer

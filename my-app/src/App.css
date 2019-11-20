@@ -48,3 +48,16 @@
 
   
 }
+
+
+.tabla3{
+  
+  list-style-type: none;
+  display: grid;
+ margin: 3% 0%;
+ margin-right: 6%;
+margin-left: 12%;
+margin-top: 2%;
+
+
+}
