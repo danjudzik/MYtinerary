@@ -1,5 +1,5 @@
 const productsReducer = (state = [], action) => {
-    
+  console.log("addProd", action)
       switch (action.type) {
         case 'ADD_PROD':
             return [
