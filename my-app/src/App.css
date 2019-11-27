@@ -58,6 +58,18 @@
  margin-right: 6%;
 margin-left: 12%;
 margin-top: 2%;
+}
 
+.form{
+  text-align: center;
+  display: inline-flex;
+  padding: 3% 0%;
+  font-size: 110%;
+  margin-right: 8%;
+  margin-top: 10%;  
+  
+}
 
+.form2{
+  border:1px solid black;
 }

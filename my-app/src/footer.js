@@ -19,10 +19,10 @@ class Footer extends Component  {
   
         <ul> 
           <li className="tabla"> 
-           <Link to ="/sign in"> sign in</Link>
+           <Link to ="/Log_In">Log In</Link>
           </li>
           <li className="tabla">
-            <Link to ="/Create_Account"> create account</Link>
+            <Link to ="/Sign_In"> Sign In</Link>
           </li>
         </ul>
 

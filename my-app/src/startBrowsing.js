@@ -74,9 +74,10 @@ class Postres extends React.Component {
         </div>
          
         <form onSubmit={(e)=>{e.preventDefault()}} className="tabla3"> 
-            City:      <input type="text"  onChange={this.onChange2('City')} placeholder="City"/> <br/>
-            Country:      <input type="text"  onChange={this.onChange2('Country')} placeholder="Country"/>
-
+            City:      <input type="text"  onChange={this.onChange2('City')} placeholder="City" className="form2"/> <br/>
+            Country:      <input type="text"  onChange={this.onChange2('Country')} placeholder="Country" className="form2"/>
+          <br/>
+          <br/>
           <input type="submit" onClick={()=>{this.submitForm()}}></input>
         </form>
         <hr/>

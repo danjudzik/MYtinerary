@@ -23,8 +23,8 @@ class App extends Component {
          <Header></Header>
         <Router>
           <Switch>
-            <Route exact path="/sign in"><SignIn /></Route>
-            <Route exact path="/Create_Account" ><LogIn/></Route>
+            <Route exact path="/Sign_In"><SignIn /></Route>
+            <Route exact path="/Log_In" ><LogIn/></Route>
             <Route exact path="/browsing"> <Postres/></Route>
             <Route path="/">
 
