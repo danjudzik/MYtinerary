@@ -36,8 +36,8 @@ class Postres extends React.Component {
       return res.json();
     }).then((data)=>{
       console.log(data)
-      this.props.dispatch(addProduct(data)) 
-    
+      this.props.dispatch(addProduct(data))
+
     })
     
   }

@@ -6,16 +6,17 @@ class SignIn extends Component  {
   constructor(props) {
     super(props);
     this.state = {
-      profilePhoto: URL,
+      profilePhoto: '',
       username: '',
       password: '',
       email: '',
       firstName: '',
       lastName: '',
-      country: null,
-      agree: null,
+      country: 'England' ,
+      agree: false,
     };
   }
+
   
   render (){ return (
         <div className="App">
@@ -30,12 +31,13 @@ class SignIn extends Component  {
       <br/>
       <p className="form">Username: </p>
       <input className ="form2"
+      value={this.state.value} onChange={this.handleChange}
         type='text'
         name='username'
         
       />
       <br/>
-      <p className="form">Password :</p>
+      <p className="form">Password: </p>
       <input className ="form2"
       type='text'
       name='password'
@@ -48,7 +50,7 @@ class SignIn extends Component  {
         
       />
       <br/>
-      <p className="form">First Name:</p>
+      <p className="form">First Name: </p>
       <input className ="form2"
       type='text'
       name='firstName'

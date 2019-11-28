@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd my-app && npm run start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "installA": "npm install && cd my-app && npm install"
   },
   "keywords": [
     "yomero"
