@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './homeIcon.png';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class GreetingEverybody5 extends Component  {
   

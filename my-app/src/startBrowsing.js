@@ -3,7 +3,13 @@ import './App.css';
 import {Button} from 'react-bootstrap';
 import {addProduct,getProducts} from './store/actions/cityAction'
 import { connect } from 'react-redux'
-import FormItem from './formItem';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 
 class Postres extends React.Component {
@@ -64,7 +70,9 @@ class Postres extends React.Component {
             {this.props.products && this.props.products.map((product)=>{
               return (
                 <li className="tabla2" key={product._id}>
-                 <Button variant="outline-secondary">{product.city}-{product.country}   </Button> 
+                  <Button variant="outline-secondary">
+                  <Link to ="/Barcelona"> {product.city}-{product.country}</Link>
+                     </Button>
                 </li>
               
               

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SignIn from "./sing in";
 import LogIn from "./log in";
 import Postres from "./startBrowsing";
+import GreetingEverybody5 from "./cities";
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/Sign_In"><SignIn /></Route>
+            <Route exact path="/Barcelona"><GreetingEverybody5/></Route>
             <Route exact path="/Log_In" ><LogIn/></Route>
             <Route exact path="/browsing"> <Postres/></Route>
             <Route path="/">
@@ -35,6 +37,7 @@ class App extends Component {
               </section>
 
             </Route>
+          
           </Switch>
               <footer>
                 <Footer></Footer>
@@ -43,6 +46,7 @@ class App extends Component {
               <nav>
                 <Nav></Nav>
               </nav>
+
         </Router>
       </div>
     );
