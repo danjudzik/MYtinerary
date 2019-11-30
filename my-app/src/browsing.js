@@ -13,7 +13,7 @@ class Browsing extends Component  {
         <div className="App">
       <header className="App-header">
       <p className="txto2"> Find your perfect trip, designed by insiders who know and love their citiesss </p>
-        <h4 className="texto">Starts Browsing </h4>
+        <h4 className="texto">Start Browsing </h4>
         <Link to="/browsing"> <img src={logo} className="App-link" alt="logo" />
         </Link>
        

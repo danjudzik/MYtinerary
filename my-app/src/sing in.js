@@ -21,6 +21,7 @@ class SignIn extends Component  {
   render (){ return (
         <div className="App">
       <header className="App-header">
+
       <form>
       <p>Photo: </p>
       <input

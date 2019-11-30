@@ -5,13 +5,12 @@ const app = express();
 const bodyParser = require('body-parser')
 const routerCities = require('./cityroutes')
 
+
 app.use(bodyParser.json())
 
 const cors = require("cors")
 app.use(cors())
-app.get("/", (req,res) => res.send("qwertyui"));
-app.get("/test", (req,res) => res.send("12314"));
-app.get("/cities", (req,res) => res.send("aasas"));
+
 
 app.use(routerCities)
 

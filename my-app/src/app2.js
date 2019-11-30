@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SignIn from "./sing in";
 import LogIn from "./log in";
 import Postres from "./startBrowsing";
-import GreetingEverybody5 from "./cities";
+import Itinerary from "./cities";
 
 
 
@@ -24,12 +24,12 @@ class App extends Component {
          <Header></Header>
         <Router>
           <Switch>
-            <Route exact path="/Sign_In"><SignIn /></Route>
-            <Route exact path="/Barcelona"><GreetingEverybody5/></Route>
-            <Route exact path="/Log_In" ><LogIn/></Route>
-            <Route exact path="/browsing"> <Postres/></Route>
-            <Route path="/">
-
+            <Route  path="/Sign_In" component={SignIn}></Route>
+            <Route path="/Log_In/:city" component={Itinerary}></Route>
+            <Route path="/sad/:city" component={Itinerary} ></Route>
+            <Route  path="/browsing" component={ Postres}></Route>
+            <Route exact path="/">
+            
               <section>
                 <div>
                   <Browsing> </Browsing>

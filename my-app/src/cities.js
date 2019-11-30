@@ -1,27 +1,56 @@
-import React, { Component } from 'react';
-import logo from './homeIcon.png';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React from 'react';
+import './App.css';
+import {getProducts} from './store/actions/itineraryAction'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
 
-class GreetingEverybody5 extends Component  {
+import { withRouter } from "react-router-dom";
+
+
+class Itinerary extends React.Component{
   
-  render (){ return (
-        <div className="App">
-      <header className="App-header">
-      <p className="texto2">cities</p>
-      <header className="App-header">
-      <Link to ="/"> <img src={logo} className="App-logo" alt="logo" /></Link>
-      </header>
-      </header>
-       
-     
-    </div>
-  )
+
+  componentDidMount(){
+    console.log("this")
+    console.log(this.props)
+    this.props.getProducts()
+   }
+
+  render(){
+     return (
+       <React.Fragment>
+         <div>aaasdfdfh
+           sdf
+           a
+           defaultasd
+           fromadf
+           sda
+         </div>
+       </React.Fragment>
+     )
+   }
+ }
+
+ const mapStateToProps = (state) => {
+   console.log("state2")
+   console.log(state)
+   return {
+     products:state.cities,
+   }
+ }
+
+ const mapDispatchToProps = (dispatch,getState) => {
+   console.log("getState")
+   console.log(getState)
+  return {
+    getProducts: () => dispatch(getProducts(getState.match.params.city)),
+  
   }
 }
 
-export default GreetingEverybody5;
+
+
+Itinerary.propTypes = {
+  getProducts: PropTypes.func.isRequired
+}
+ export default connect(mapStateToProps, mapDispatchToProps)(Itinerary);

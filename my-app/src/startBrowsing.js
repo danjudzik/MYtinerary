@@ -19,7 +19,6 @@ class Postres extends React.Component {
      products:[]
     }
   }
-
   onChange2 = name => event => {
     let value_ = name === 'image'
     ? event.target.files[0]
@@ -29,9 +28,7 @@ class Postres extends React.Component {
   
   }
 
-
   submitForm =()=>{
-    
     fetch("http://localhost:5000/city",{
       method: 'POST',
       body:JSON.stringify(this.state),
@@ -45,7 +42,6 @@ class Postres extends React.Component {
       this.props.dispatch(addProduct(data))
 
     })
-    
   }
   
  
@@ -58,24 +54,20 @@ class Postres extends React.Component {
   render(){
     return (
       <React.Fragment>
-        
-
+       <hr/>
         <div>
-       
-        </div>
-        <hr/>
-        <div>
-
           <ul >
             {this.props.products && this.props.products.map((product)=>{
               return (
                 <li className="tabla2" key={product._id}>
-                  <Button variant="outline-secondary">
-                  <Link to ="/Barcelona"> {product.city}-{product.country}</Link>
-                     </Button>
+                 <span>
+                    <Link to={`/city/barcelona2`} >{product.city}-{product.country}</Link>
+
+                 </span>
+                    
+
+                  
                 </li>
-              
-              
               )
             })}
           </ul>
@@ -86,7 +78,7 @@ class Postres extends React.Component {
             Country:      <input type="text"  onChange={this.onChange2('Country')} placeholder="Country" className="form2"/>
           <br/>
           <br/>
-          <input type="submit" onClick={()=>{this.submitForm()}}></input>
+          <input type="submit" onClick={()=>{this.submitForm.bind(this)()}}></input>
         </form>
         <hr/>
         
@@ -94,13 +86,15 @@ class Postres extends React.Component {
     )
   }
 }
-
 const mapStateToProps = (state) => {
-  console.log("state2")
-  console.log(state)
   return {
     products:state.cities,
   }
 }
-
-export default connect(mapStateToProps, {getProducts})(Postres);
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    products: () => dispatch(getProducts)
+  }
+}
+export default connect(mapStateToProps,  {getProducts})(Postres);

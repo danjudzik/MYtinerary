@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const citiesController = require('./cityController')
 const cityModel = require("./cities")
+const itineraryModel = require("./itinerary")
+const itineraryControllers = require('./itineraryController')
+
 
 
 router.get("/city",citiesController.getCities)
@@ -22,5 +25,8 @@ router.get('/city/:city',
 			})
 			.catch(err => console.log(err));
 });
-router.get("city/prueba",citiesController.getItinerary)
+
+router.get("/itinerary",itineraryControllers.getItineraries)
+
+//router.get("itineraries/:idIt",itineriController.getItinerary)
 module.exports = router 

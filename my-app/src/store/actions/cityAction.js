@@ -24,8 +24,6 @@ function getProducts() {
       })
     };
   }
-  
-  
     export   {
         addProduct,deleteProduct, getProducts
     }
