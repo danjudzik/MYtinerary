@@ -25,8 +25,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route  path="/Sign_In" component={SignIn}></Route>
-            <Route path="/Log_In/:city" component={Itinerary}></Route>
-            <Route path="/sad/:city" component={Itinerary} ></Route>
+            <Route path='/city/:city' component={Itinerary}></Route>
+            <Route path="/Log_In" component={LogIn} ></Route>
             <Route  path="/browsing" component={ Postres}></Route>
             <Route exact path="/">
             

@@ -61,12 +61,11 @@ margin-top: 2%;
 }
 
 .form{
-  text-align: center;
-  display: inline-flex;
+  text-align: left;
   padding: 3% 0%;
   font-size: 110%;
-  margin-right: 8%;
   margin-top: 10%;  
+  font-size: 120%;
   
 }
 

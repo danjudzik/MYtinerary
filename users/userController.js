@@ -1,9 +1,15 @@
 const user = require("./userSchema")
 
+const getUser = (req,res)=>{
+    user
+    .find({}).then((user)=>{res.json(user).status(204)})
+}
+
 const postUser = (req,res) =>{
     console.log(req.body)
     user.create({
         profilePhoto: req.body.profilePhoto,
+        password: req.body.password,
         username: req.body.username,
         email: req.body.email,
         firstName: req.body.firstName,
@@ -16,4 +22,4 @@ const postUser = (req,res) =>{
     })
 }
 
-module.exports = {postUser}
+module.exports = {getUser,postUser}

@@ -61,7 +61,7 @@ class Postres extends React.Component {
               return (
                 <li className="tabla2" key={product._id}>
                  <span>
-                    <Link to={`/city/barcelona2`} >{product.city}-{product.country}</Link>
+                    <Link to={'/city/:city'} >{product.city}-{product.country}</Link>
 
                  </span>
                     
