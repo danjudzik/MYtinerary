@@ -1,34 +1,93 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addProduct } from './store/actions/cityAction';
 
-class FormItem extends React.Component {
-  constructor(props){
+
+
+
+class FormItem extends Component  {
+  constructor(props) {
     super(props);
-    this.state={
-   
-      value:''
-    }
+    this.state = {
+      city: '',
+      country: ''
+    };
+  }
+
+  handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    console.log("this")
     console.log(this)
+
+    this.setState({
+      [name]: value
+    });
+    
   }
+
+   handleSubmit = (event) =>{
+     console.log("this")
+    event.preventDefault();
+    if(
+        this.state.city == "" ||
+        this.state.country == "" 
+       
+    ){
+    }
+
+    event.preventDefault();
+    
+    console.log("this.state");
+    console.log(this.state);
+    const newUser = {
+        city: this.state.city,
+        country: this.state.country,
+    }
+    this.props.dispatch(addProduct(newUser));
+}
+
+
+
   
-onChange = name => event => {
-  let value_ = name === 'image'
-  ? event.target.files[0]
-  : event.target.value
+  render (){ return (
+        <div className="App">
+      <header className="App-header">
 
-  this.setState({value: value_ })
-
-}
-
-  render(){
-    return (
+      <form onSubmit={this.handleSubmit}>
+      <p className="form">City: </p>
+      <input
+        type='text'
+        name='city'
+        className="form2"
+        onChange={this.handleInputChange}
+        value={this.state.numberOfGuests}
+      />
+      <br/>
+      <p className="form">Country: </p>
+      <input className ="form2"
+      value={this.state.value} onChange={this.handleChange}
+        type='text'
+        name='country'
+        onChange={this.handleInputChange}
+        value={this.state.numberOfGuests}
+      />
+      <br/>
      
-      <div className="form-group ">
-      <label htmlFor="formGroupExampleInput">{this.props.label}</label>
-      <input type="text" defaultValue={this.state.defaultValue}  onChange={this.onChange()} className="form-control" id="formGroupExampleInput" placeholder="Example input" />
-       </div>
-    )
+      <br/>
+      <br/>
+     <input type='submit' value="Submit" />
+      
+
+      </form>
+      </header>
+     
+       
+     
+    </div>
+  )
   }
 }
 
-export default FormItem;
+export default connect() (FormItem);

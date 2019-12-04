@@ -15,7 +15,7 @@ class SignIn extends Component  {
       email: '',
       firstName: '',
       lastName: '',
-      country: 'England' ,
+      country: '' ,
       agree: false,
     };
   }
@@ -37,12 +37,12 @@ class SignIn extends Component  {
      console.log("this")
     event.preventDefault();
     if(
-        !this.state.username == "" ||
-        !this.state.pasword == "" ||
-        !this.state.profilePhoto == "" ||
-        !this.state.firstName == "" ||
-        !this.state.lastName == "" ||
-        !this.state.agree != false
+        this.state.username == "" ||
+        this.state.pasword == "" ||
+        this.state.profilePhoto == "" ||
+        this.state.firstName == "" ||
+        this.state.lastName == "" ||
+        this.state.agree != false
     ){
     }
 
@@ -55,7 +55,8 @@ class SignIn extends Component  {
         password: this.state.password,
         profilePhoto: this.state.profilePhoto,
         firstName: this.state.firstName,
-        lastName: this.state.lastName
+        lastName: this.state.lastName,
+        email: this.state.username
     }
     this.props.dispatch(createUser(newUser));
 }
@@ -119,7 +120,7 @@ class SignIn extends Component  {
       /> 
       <br/>
       <p className="form">Country: </p>
-      <select value={this.state.country}  onChange={this.handleInputChange}>
+      <select name='country' value={this.state.country}  onChange={this.handleInputChange}>
         <option value="England">England</option>
         <option value="France">France</option>
         <option value="Germany">Germany</option>
@@ -140,7 +141,7 @@ class SignIn extends Component  {
       
       <br/>
       <br/>
-      <input type='submit' value="Submit" />
+     <input type='submit' value="Submit" />
       
 
       </form>

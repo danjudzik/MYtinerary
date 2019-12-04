@@ -1,13 +1,18 @@
-const addProduct = payload => ({
-    type: 'ADD_PROD',
-    payload:payload
-  })
+const addProduct = newUser => dispatch => {
+  fetch('http://localhost:5000/city', {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(newUser)
+      })
+      .then(res => res.json())
+      .then(user => dispatch({
+          type: "CREATE_USER",
+          payload: user
+      }))
+  }
 
-
-   const deleteProduct = payload=>({
-    type:'DELETE_PROD',
-    payload:payload
-  })
 
 function getProducts() {
     return (dispatch,getState) => {
@@ -25,5 +30,5 @@ function getProducts() {
     };
   }
     export   {
-        addProduct,deleteProduct, getProducts
+        addProduct, getProducts
     }

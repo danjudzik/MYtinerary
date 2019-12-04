@@ -9,7 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import FormItem from './formItem'
 
 
 class Postres extends React.Component {
@@ -73,13 +73,7 @@ class Postres extends React.Component {
           </ul>
         </div>
          
-        <form onSubmit={(e)=>{e.preventDefault()}} className="tabla3"> 
-            City:      <input type="text"  onChange={this.onChange2('City')} placeholder="City" className="form2"/> <br/>
-            Country:      <input type="text"  onChange={this.onChange2('Country')} placeholder="Country" className="form2"/>
-          <br/>
-          <br/>
-          <input type="submit" onClick={()=>{this.submitForm.bind(this)()}}></input>
-        </form>
+        <FormItem></FormItem>
         <hr/>
         
       </React.Fragment>
@@ -93,7 +87,6 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    // dispatching plain actions
     products: () => dispatch(getProducts)
   }
 }
