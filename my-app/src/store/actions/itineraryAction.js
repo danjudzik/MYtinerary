@@ -1,21 +1,34 @@
-function getProducts(idCity) {
-  console.log("idCity")
-  console.log(idCity)
-  return (dispatch,getState) => {
-      console.log("getState()")
-      console.log(getState())
-      if(getState().length>0) return;
-     return fetch('http://localhost:5000/city/'+idCity).then((res)=>{
-        return res.json()
-      }).then((data)=>{
-        dispatch({
-          type:'GET_PROD',
-          payload:data
-        });
-      })
-    };
-  }
+//import fetch from 'cross-fetch'
 
-  export   {
- getProducts
+export const REQUEST_ITINERARIES ='REQUEST_ITINERARIES'    
+export function requestItineraries(id) {
+    return {
+        type: REQUEST_ITINERARIES,
+        id
+    }
+}
+
+export const RECEIVE_ITINERARIES = 'RECEIVE_ITINERARIES'
+export function receiveItineraries(id, json) {
+    return {
+        type: RECEIVE_ITINERARIES,
+        id,
+        payloadCity: json,
+        payloadItineraries: json.Itinerary.map(Itinerary=>Itinerary),
+        receivedAt: Date.now()
+    }
+}
+
+export function fetchItineraries (id) {
+    return dispatch => {       
+        dispatch(requestItineraries(id))
+        console.log(id);
+        return fetch('http://localhost:5000/city/' + id)
+        .then(
+           itinerariesResponse => { return itinerariesResponse.json()},
+            error => console.log('an error ocurred', error)
+        )
+        .then( json => dispatch(receiveItineraries(id, json))
+        )
+    }
 }

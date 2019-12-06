@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import {getProducts} from './store/actions/itineraryAction'
+import {getProducts,fetchItineraries} from './store/actions/itineraryAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
+
 
 import { withRouter } from "react-router-dom";
 
@@ -10,40 +11,39 @@ import { withRouter } from "react-router-dom";
 class Itinerary extends React.Component{
   
 
-  componentDidMount(){
-    console.log("this")
-    console.log(this.props)
-    this.props.getProducts()
-   }
+  componentDidMount() {
+    let city = this.props.match.params.city;
+    console.log(city);
+    console.log(this.props);
+    this.props.dispatch(fetchItineraries(city))
+   .then(() => {
+   console.log("aca")
+   console.log(this.props)
 
+   })
+};
   render(){
+    const itineraries = this.props.itineraries
+    const activities = this.props.activities
+    const city = this.props.match.params.city
+console.log(itineraries)
      return (
+       
        <React.Fragment>
-         <div>aaasdfdfh
-           sdf
-           a
-           defaultasd
-           fromadf
-           sda
+         <div>
+           <h3>Itinieraries for {city}</h3>
          </div>
        </React.Fragment>
      )
    }
  }
 
- const mapStateToProps = (state) => {
-   console.log("state2")
-   console.log(state)
-   return {
-     products:state.cities,
-   }
- }
-
+ 
  const mapDispatchToProps = (dispatch,getState) => {
    console.log("getState")
    console.log(getState)
   return {
-    getProducts: () => dispatch(getProducts(getState.match.params.city)),
+    fetchItineraries: () => dispatch(fetchItineraries(getState.match.params.city)),
   
   }
 }
@@ -53,4 +53,4 @@ class Itinerary extends React.Component{
 Itinerary.propTypes = {
   getProducts: PropTypes.func.isRequired
 }
- export default connect(mapStateToProps, mapDispatchToProps)(Itinerary);
+ export default connect(mapDispatchToProps)(Itinerary);

@@ -56,12 +56,12 @@ class Postres extends React.Component {
       <React.Fragment>
        <hr/>
         <div>
-          <ul >
-            {this.props.products && this.props.products.map((product)=>{
+          <ul>
+            {this.props.products.map((product)=>{
               return (
                 <li className="tabla2" key={product._id}>
                  <span>
-                    <Link to={'/city/:city'} >{product.city}-{product.country}</Link>
+                    <Link to={'/city/'+ product.city} >{product.city}-{product.country}</Link>
 
                  </span>
                     
