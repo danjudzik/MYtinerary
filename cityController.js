@@ -20,5 +20,13 @@ const postCities = (req,res) =>{
         })
 }
 
+const getCityItinerary = (req,res) =>{
+    let cityRequested = req.params._id;  
+    City
+    .findOne({_id:cityRequested})
+    .populate("itineraries")
+    .then((city)=>{res.send(city).status(204)}
+    )};    
 
-module.exports = {getCities,postCities}
+
+module.exports = {getCities,postCities,getCityItinerary}

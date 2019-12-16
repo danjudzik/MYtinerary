@@ -5,16 +5,28 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 
 
+
 import { withRouter } from "react-router-dom";
 
 
 class Itinerary extends React.Component{
-  
+  constructor(props) {
+    super(props)
+    this.state = {
+        open:false,
+        clicked: false,
+    }
+};
+
+static propTypes = {
+  dispatch: PropTypes.func,
+};
 
   componentDidMount() {
     let city = this.props.match.params.city;
+    console.log("city");
     console.log(city);
-    console.log(this.props);
+
     this.props.dispatch(fetchItineraries(city))
    .then(() => {
    console.log("aca")
@@ -26,7 +38,7 @@ class Itinerary extends React.Component{
     const itineraries = this.props.itineraries
     const activities = this.props.activities
     const city = this.props.match.params.city
-console.log(itineraries)
+console.log(fetchItineraries)
      return (
        
        <React.Fragment>
@@ -48,9 +60,12 @@ console.log(itineraries)
   }
 }
 
+/*const mapStateToProps = (state) => { 
+  console.log(state);
+  return {
+  
+  }
+}*/
 
 
-Itinerary.propTypes = {
-  getProducts: PropTypes.func.isRequired
-}
  export default connect(mapDispatchToProps)(Itinerary);

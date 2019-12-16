@@ -5,10 +5,18 @@ const itineraryModel = require("./itinerary")
 const itineraryControllers = require('./itineraryController')
 
 const userController = require('./users/userController')
+const jwt = require("jsonwebtoken")
+const key = require("./env")
+const passport = require('passport');
 
-
-
-
+function authenticateJwt(req, res, next) {
+    passport.authenticate('jwt', function(err, user, info) {
+      if (err) return next(err);
+      if (!user) res.redirect("http://google.com.ar/");
+      req.user = user;
+      next();
+    })(req, res, next);
+  }
 
 
 router.get("/city",citiesController.getCities)
@@ -35,8 +43,8 @@ router.get("/itinerary",itineraryControllers.getItineraries)
 
 //router.get("itineraries/:idIt",itineriController.getItinerary)
 
-router.get("/user",userController.getUser)
+router.get("/user",authenticateJwt ,userController.getUser)
 router.post("/user",userController.postUser)
-
-
+router.post("/user/login", userController.logIn); 
+router.get("/itineraries", itineraryControllers.getItineraries);
 module.exports = router 

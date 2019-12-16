@@ -25,10 +25,11 @@ export function fetchItineraries (id) {
         console.log(id);
         return fetch('http://localhost:5000/city/' + id)
         .then(
-           itinerariesResponse => { return itinerariesResponse.json()},
+           itinerariesResponse => { console.log(itinerariesResponse);
+               return itinerariesResponse.json()},
             error => console.log('an error ocurred', error)
         )
-        .then( json => dispatch(receiveItineraries(id, json))
+        .then(json => dispatch(receiveItineraries(id, json))
         )
     }
 }
