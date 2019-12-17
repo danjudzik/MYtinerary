@@ -30,22 +30,13 @@ class FormItem extends Component  {
    handleSubmit = (event) =>{
      console.log("this")
     event.preventDefault();
-    if(
-        this.state.city == "" ||
-        this.state.country == "" 
-       
-    ){
-    }
 
-    event.preventDefault();
     
     console.log("this.state");
     console.log(this.state);
-    const newUser = {
-        city: this.state.city,
-        country: this.state.country,
-    }
-    this.props.dispatch(addProduct(newUser));
+    console.log(this.props)
+    
+
 }
 
 

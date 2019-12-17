@@ -3,7 +3,9 @@
   padding: 5%;
   
 }
-
+a {
+  color: #FFF;
+}
 .App-logo {
   height: 10vmin;
   

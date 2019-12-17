@@ -47,4 +47,9 @@ router.get("/user",authenticateJwt ,userController.getUser)
 router.post("/user",userController.postUser)
 router.post("/user/login", userController.logIn); 
 router.get("/itineraries", itineraryControllers.getItineraries);
+
+
+
+router.get("/google")
+router.get("/googleRedirect")
 module.exports = router 
