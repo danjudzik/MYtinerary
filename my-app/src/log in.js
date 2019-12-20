@@ -45,20 +45,23 @@ class LogIn extends Component  {
     console.log(this.props)
    }
 
+   
   
   render (){ 
     console.log("this.props.token")
     console.log(this.props.token2)
     const token = this.props.token2;
-    if(token != "undefined" && token != {} && token != null){
-      return <Redirect to='/' />
+   /* if(token != "undefined" && token != {} && token != null){
+      //return <Redirect to='/' />
     }
     
     else{
-
+*/
     
     return (
+       
         <div className="App">
+          <body>
       <header className="App-header">
       <form onSubmit={this.handleSubmit}>
       <br/>
@@ -90,15 +93,16 @@ class LogIn extends Component  {
       
       <input type='submit' />
       </form>
+
       </header>
-     
+     </body>
        
      
     </div>
   )
   }
 }
-}
+//}
 const mapDispatchToProps =  {
   
   login:user=>loginUser(user)

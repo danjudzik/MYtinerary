@@ -22,9 +22,9 @@ const postCities = (req,res) =>{
 
 const getCityItinerary = (req,res) =>{
     let cityRequested = req.params._id;  
-    City
+    cities
     .findOne({_id:cityRequested})
-    .populate("itineraries")
+    .populate("Itinerary")
     .then((city)=>{res.send(city).status(204)}
     )};    
 

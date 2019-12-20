@@ -27,7 +27,7 @@ static propTypes = {
     console.log("city");
     console.log(city);
 
-    this.props.dispatch(fetchItineraries(city))
+    this.props.fetchItineraries(city)
    .then(() => {
    console.log("aca")
    console.log(this.props)
@@ -35,10 +35,9 @@ static propTypes = {
    })
 };
   render(){
-    const itineraries = this.props.itineraries
-    const activities = this.props.activities
+    const itineraries = this.props.itineraries2
     const city = this.props.match.params.city
-console.log(fetchItineraries)
+console.log(itineraries)
      return (
        
        <React.Fragment>
@@ -52,20 +51,19 @@ console.log(fetchItineraries)
 
  
  const mapDispatchToProps = (dispatch,getState) => {
-   console.log("getState")
    console.log(getState)
+   console.log(dispatch)
   return {
     fetchItineraries: () => dispatch(fetchItineraries(getState.match.params.city)),
   
   }
 }
 
-/*const mapStateToProps = (state) => { 
-  console.log(state);
+const mapStateToProps = (state) => {
+  console.log("state")
+  console.log(state)
   return {
-  
+  itineraries2: state.itineraries.itineraries
   }
-}*/
-
-
- export default connect(mapDispatchToProps)(Itinerary);
+  }
+  export default connect(mapStateToProps,mapDispatchToProps )(Itinerary);

@@ -39,8 +39,10 @@ router.get('/city/:city',
     .catch(err => console.log(err));
 });
 
-router.get("/itinerary",itineraryControllers.getItineraries)
 
+
+router.get("/itinerary",itineraryControllers.getItineraries)
+router.get("/cities/:_id", citiesController.getCityItinerary)
 //router.get("itineraries/:idIt",itineriController.getItinerary)
 
 router.get("/user",authenticateJwt ,userController.getUser)
@@ -52,4 +54,6 @@ router.get("/itineraries", itineraryControllers.getItineraries);
 
 router.get("/google")
 router.get("/googleRedirect")
+
+
 module.exports = router 
